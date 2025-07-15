@@ -1,0 +1,1014 @@
+/* Reset und Basis-Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    background: none;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Header Styles */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: #F8E6D7;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+    width: 100vw;
+}
+
+/* Navigation Styles */
+nav {
+    /* width: 100%; */ /* Removed width */
+    max-width: 900px; /* Adjusted max-width */
+    margin: 0 2vw 0 auto; /* Align to the right with a small right margin */
+    background: transparent;
+    box-shadow: none;
+}
+
+/* Main Content Styles */
+main {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* Footer Styles */
+footer {
+    background: none;
+    color: inherit;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+/* Menü-Styling */
+nav ul {
+    display: flex;
+    /* justify-content: center; */ /* Removed centering */
+    gap: 0.2rem; /* Further reduced gap */
+    list-style: none;
+    font-size: 0.9rem; /* Reduced font size */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0.4rem 0; /* Adjusted vertical padding */
+    height: 40px; /* Reduced height */
+    align-items: center;
+    background: transparent;
+    width: 100%; /* Ensure ul takes full width of nav */
+}
+nav ul li {
+    white-space: nowrap;
+    flex-shrink: 1; /* Allow items to shrink */
+}
+nav ul li a {
+    color: #25777A;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.2rem 0.6rem; /* Further reduced horizontal padding */
+    border-radius: 20px;
+    transition: background 0.2s, color 0.2s;
+    display: inline-block;
+    font-size: 0.9rem; /* Match ul font size */
+    letter-spacing: 0.01em;
+    background: transparent;
+}
+nav ul li a:hover, nav ul li a.active {
+    background: #F68B4B;
+    color: #fff;
+}
+
+/* Button-Styling */
+.btn {
+    display: inline-block;
+    padding: 0.8rem 2.5rem;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 0 0.5rem;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+}
+.btn-primary {
+    background: #25777A;
+    color: #fff;
+}
+.btn-primary:hover {
+    background: #195356;
+    color: #fff;
+}
+.btn-secondary {
+    background: #F68B4B;
+    color: #fff;
+}
+.btn-secondary:hover {
+    background: #d96e2c;
+    color: #fff;
+}
+
+/* Global Content Container */
+.content-container {
+    width: 100%;
+    max-width: 1200px;
+    /* Oder eine andere passende Breite, die Ihnen gefällt */
+    margin: 0 auto;
+    padding: 0 2vw;
+    /* Zusätzliches inneres Padding */
+    box-sizing: border-box;
+}
+
+/* Passt das Padding für alle Sektionen an, nur oben/unten */
+section {
+    max-width: 100%;
+    margin: 0;
+    padding: 3vw 0;
+    /* Horizontal Padding wird vom .content-container übernommen */
+    min-height: 100vh;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* Sektion selbst zentriert den Inhalt */
+}
+
+/* Spezifische Anpassungen für einzelne Sektionen, falls nötig */
+.hero .content-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.vorteile .content-container .vorteile-grid {
+    display: flex;
+    justify-content: space-around;
+    gap: 2rem;
+}
+
+.mission {
+    min-height: 100vh; /* Sicherstellen, dass die Sektion mindestens Bildschirmhöhe hat */
+    padding: 4rem 0; /* Vertikales Padding */
+    background:#F8E6D7;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Inhalt vertikal zentrieren */
+    align-items: center; /* Inhalt horizontal zentrieren */
+}
+
+.mission > h2 {
+    margin-top: 0; /* Oberen Rand der Überschrift anpassen, falls nötig */
+    margin-bottom: 2rem; /* Abstand unter der Überschrift */
+    /* Bestehende Schriftgrößen und Farben beibehalten */
+}
+
+.mission .content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Zentriert den content-container */
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2vw;
+    box-sizing: border-box;
+}
+
+.mission .content-container > div {
+     display: grid;
+     grid-template-columns: 55% 35%; /* Bild breiter (55%), Text schmaler (35%) */
+     gap:2rem;
+     width: 100%;
+     align-items: stretch;
+     justify-content: center;
+}
+
+.mission .content-container img {
+    width: 100%; /* Bild nimmt volle Breite seiner Grid-Zelle ein */
+    border-radius:10px;
+    height: 100%; /* Höhe auf 100% der Grid-Zelle */
+    object-fit: cover;
+}
+
+.mission .content-container > div > div {
+    color:#25777A;
+    font-size:0.9rem; /* Schriftgröße des Textes weiter verkleinern */
+    width: 100%;
+    display:flex;
+    flex-direction:column;
+    justify-content: flex-start;
+    height: 100%;
+}
+
+/* Bestehende Absatz-Margins beibehalten */
+.mission .content-container > div > div p {
+    text-align: justify;
+    margin-bottom: 1.5rem;
+}
+
+.mission .content-container > div > div p:last-child {
+    margin-bottom: 0;
+}
+
+.ueber-uns .content-container > div {
+    display:flex;
+    justify-content:space-around;
+    align-items:flex-start;
+    gap:2rem;
+}
+
+.partner .content-container .partner-header {
+    display:flex;
+    align-items:center;
+    gap:2rem;
+    margin-bottom:3rem;
+}
+.partner .content-container .partner-logos {
+    display:flex;
+    flex-wrap:wrap;
+    gap:2rem;
+    justify-content:center;
+    align-items:center;
+    margin-top:2rem;
+}
+
+/* Zentrierung für Überschriften in anderen Bereichen */
+section > h2, section > h1 {
+    text-align: center;
+    width: 100%;
+}
+
+/* Section Versorgung exakt auf Viewport-Höhe begrenzen */
+.versorgung {
+    min-height: 100vh;
+    max-height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.versorgung img {
+    max-height: 60vh;
+    width: auto;
+    margin: 2rem auto 0 auto;
+    display: block;
+}
+
+.kontakt {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #F68B4B;
+    padding: 0;
+}
+.kontakt-inner {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 0;
+    padding: 0 2vw;
+}
+.kontakt-img {
+    flex: 0 0 40vw;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background: #F68B4B;
+    max-width: 40vw;
+    min-width: 320px;
+    padding-left: 0;
+}
+.kontakt-img img {
+    max-width: 90%;
+    max-height: 70vh;
+    height: auto;
+    display: block;
+}
+.kontakt-content {
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    background: #F68B4B;
+    max-width: 60vw;
+    min-width: 320px;
+    padding: 0;
+    height: auto;
+}
+.kontakt-logo {
+    align-self: flex-end;
+    height: 60px;
+    margin-bottom: 2.5rem;
+}
+.kontakt-textblock {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.kontakt-textblock h2 {
+    font-size: 2.3rem;
+    font-family: Georgia,serif;
+    color: #222;
+    margin-bottom: 2.5rem;
+    line-height: 1.1;
+    text-align: right;
+}
+.kontakt-textblock .btn-primary {
+    margin-bottom: 2.5rem;
+    font-size: 1.1rem;
+    align-self: flex-end;
+}
+.kontakt-social {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+}
+.kontakt-social a {
+    color: #25777A;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+    gap: 0.5rem;
+}
+.kontakt-social a:hover {
+    text-decoration: underline;
+}
+@media (max-width: 1000px) {
+    .kontakt-inner {
+        flex-direction: column;
+        max-width: 100vw;
+        padding: 0 1rem;
+    }
+    .kontakt-img, .kontakt-content {
+        max-width: 100vw;
+        min-width: 0;
+        height: auto;
+        padding: 0;
+    }
+    .kontakt-logo {
+        margin-right: 0;
+        margin-bottom: 1.5rem;
+    }
+    .kontakt-textblock {
+        align-items: flex-end;
+    }
+    .kontakt-textblock h2 {
+        text-align: right;
+    }
+    .kontakt-social {
+        justify-content: flex-end;
+    }
+}
+
+.partner-section-styled {
+    background-color: #25777A !important;
+    color: #F8E6D7 !important;
+    min-height: 100vh !important; /* Mindesthöhe auf 100% der Viewport-Höhe setzen */
+    padding: 4rem 0 !important; /* Vertikales Padding beibehalten */
+    text-align: center; /* Zentriert den Inhalt der Sektion */
+    display: flex !important; /* Flexbox für die Sektion */
+    flex-direction: column !important; /* Inhalte vertikal anordnen */
+    justify-content: center !important; /* Inhalt vertikal zentrieren */
+    align-items: center !important; /* Inhalt horizontal zentrieren */
+}
+
+.partner-section-styled .content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Zentriert den content-container */
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2vw;
+    box-sizing: border-box;
+}
+
+.partner-section-styled .partner-header {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Zentriert den Header-Inhalt */
+    gap: 2rem;
+    margin-bottom: 3rem;
+    width: 100%;
+    max-width: 800px;
+}
+
+.partner-section-styled .partner-header h2 {
+    color: #F8E6D7 !important;
+    font-size: 2.5rem;
+    font-family: Georgia, serif;
+    text-align: center; /* Zentriert die Überschrift */
+    margin: 0;
+}
+
+.partner-section-styled .partner-header img {
+    height: 60px;
+}
+
+.partner-section-styled .partner-logos {
+    display: grid !important; /* Grid erzwingen */
+    grid-template-columns: repeat(3, 1fr) !important; /* Festes 3-Spalten-Layout erzwingen */
+    gap: 2.5rem !important; /* Abstand erzwingen */
+    width: 100% !important;
+    max-width: 900px !important; /* Maximale Breite erzwingen */
+    margin: 0 auto !important; /* Zentrierung erzwingen */
+    padding: 0 !important;
+    justify-items: center !important; /* Zentrierung im Grid-Feld erzwingen */
+    align-items: center !important; /* Vertikale Zentrierung im Grid-Feld erzwingen */
+}
+
+.partner-section-styled .partner-logos img {
+    background: #F8E6D7 !important;
+    border-radius: 8px !important;
+    padding: 1rem 1.5rem !important;
+    width: 100% !important;
+    height: auto !important;
+    max-height: 70px !important; /* Maximale Höhe erzwingen */
+    object-fit: contain !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
+}
+
+/* Responsive Anpassungen mit !important */
+@media (max-width: 900px) {
+    .partner-section-styled .partner-logos {
+        grid-template-columns: repeat(2, 1fr) !important; /* 2 Spalten erzwingen */
+        gap: 2rem !important;
+        max-width: 600px !important;
+    }
+    
+    .partner-section-styled .partner-logos img {
+        max-height: 60px !important;
+        padding: 0.8rem 1.2rem !important;
+    }
+}
+
+@media (max-width: 600px) {
+    .partner-section-styled .partner-header {
+        flex-direction: column !important;
+        gap: 1rem !important;
+        margin-bottom: 2rem !important;
+    }
+
+    .partner-section-styled .partner-header h2 {
+        font-size: 2rem !important;
+    }
+    
+    .partner-section-styled .partner-header img {
+        height: 50px !important;
+    }
+
+    .partner-section-styled .partner-logos {
+        grid-template-columns: 1fr !important; /* 1 Spalte erzwingen */
+        gap: 1rem !important;
+        max-width: 300px !important;
+    }
+    
+    .partner-section-styled .partner-logos img {
+        max-height: 50px !important;
+        padding: 0.6rem 1rem !important;
+    }
+}
+
+/* Entferne die alten Partner-Styles, da sie durch die neuen überschrieben werden */
+.partner {
+    width: 100vw;
+    min-height: 100vh;
+    padding: 4rem 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.partner-header {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    width: 100%;
+}
+
+.partner-logos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 2rem auto 0 auto;
+}
+
+.ablauf {
+    width: 100vw;
+    min-height: 100vh;
+    background: #F68B4B;
+    padding: 4rem 0 0 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+.ablauf h2 {
+    width: 100%;
+    text-align: center;
+}
+.ablauf-timeline {
+    position: relative;
+    width: 90vw;
+    max-width: 1400px;
+    margin: 3rem auto 0 auto;
+    height: 180px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+.ablauf-timeline-line {
+    position: absolute;
+    left: 7%;
+    right: 7%;
+    top: 164px;
+    height: 6px;
+    background: #25777A;
+    border-radius: 3px;
+    z-index: 1;
+    pointer-events: none;
+}
+.ablauf-step-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+.ablauf-step-group img {
+    height: 120px;
+    margin-bottom: 32px;
+}
+.ablauf-dot {
+    width: 32px;
+    height: 32px;
+    background: #25777A;
+    border: 6px solid #F68B4B;
+    border-radius: 50%;
+    margin-top: 0;
+    z-index: 2;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    position: relative;
+}
+.ablauf-grid {
+    width: 90vw;
+    max-width: 1400px;
+    margin: 2.5rem auto 0 auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+}
+.ablauf-grid > div {
+    flex: 1 1 0;
+    text-align: center;
+}
+.ablauf-grid h3 {
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+@media (max-width: 900px) {
+    .ablauf-timeline {
+        width: 98vw;
+        max-width: 100vw;
+        height: 110px;
+    }
+    .ablauf-timeline-line {
+        left: 3%;
+        right: 3%;
+        top: 90px;
+    }
+    .ablauf-step-group img {
+        height: 70px;
+        margin-bottom: 18px;
+    }
+    .ablauf-dot {
+        width: 20px;
+        height: 20px;
+        border-width: 4px;
+        margin-top: 0;
+    }
+    .ablauf-grid {
+        margin-top: 1.5rem;
+    }
+}
+
+.global {
+    background: #25777A;
+    color: #F8E6D7;
+    min-height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2vw;
+    box-sizing: border-box;
+}
+.global-text {
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    max-width: 700px;
+    margin-left: 0;
+    margin-right: 0;
+}
+.global-text h2 {
+    font-size: 3.2rem;
+    font-family: Georgia,serif;
+    color: #F8E6D7;
+    margin-bottom: 2.5rem;
+    line-height: 1.1;
+}
+.global-text p {
+    font-size: 1.4rem;
+    margin-top: 2rem;
+    color: #F8E6D7;
+}
+.global-img {
+    flex: 0 0 34vw;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    max-width: 34vw;
+    height: 100%;
+    margin-right: 0;
+}
+.global-img img {
+    max-width: 100%;
+    max-height: 60vh;
+    height: auto;
+    display: block;
+}
+@media (max-width: 1000px) {
+    .global {
+        flex-direction: column;
+        min-height: auto;
+        padding: 2rem 1rem;
+        justify-content: center;
+    }
+    .global-text {
+        margin-left: 0;
+        margin-right: 0;
+        max-width: 100vw;
+        align-items: center;
+        text-align: center;
+    }
+    .global-img {
+        margin-right: 0;
+        max-width: 100vw;
+        justify-content: center;
+    }
+}
+
+/* Füge responsive Styles hinzu */
+@media (max-width: 768px) {
+    /* Allgemeine Anpassungen */
+    .content-container {
+        padding: 0 1rem; /* Reduziere horizontalen Abstand auf kleinen Bildschirmen */
+    }
+
+    section {
+        padding: 2rem 0; /* Reduziere vertikales Padding */
+        min-height: auto; /* Entferne Mindesthöhe, um Inhalte nicht zu erzwingen */
+    }
+
+    /* Header und Navigation */
+    header {
+        justify-content: center; /* Zentriere Header-Inhalt auf kleinen Bildschirmen */
+    }
+
+    nav {
+        margin: 0 auto; /* Zentriere Navigation */
+        max-width: 100%; /* Nutze gesamte Breite */
+        padding: 0 0.5rem; /* Füge etwas horizontalen Abstand hinzu */
+    }
+
+    nav ul {
+        flex-wrap: wrap; /* Erlaube Menüpunkten, in nächste Zeile umzubrechen */
+        justify-content: center; /* Zentriere Menüpunkte, wenn sie umbrechen */
+        height: auto; /* Erlaube der Höhe, sich anzupassen */
+        font-size: 0.8rem; /* Reduziere Schriftgröße weiter */
+        gap: 0.3rem; /* Passe Abstand an */
+        padding: 0.5rem 0;
+    }
+
+    nav ul li a {
+        padding: 0.1rem 0.4rem; /* Reduziere Padding weiter */
+        font-size: 0.8rem; /* Stelle sicher, dass die Schriftgröße passt */
+    }
+
+    /* Hero-Bereich */
+    .hero .content-container {
+        flex-direction: column; /* Staple Elemente */
+        text-align: center; /* Zentriere Text */
+    }
+
+    .hero .content-container img {
+        margin-top: 2rem; /* Füge Abstand zwischen Text und Bild hinzu */
+        height: 80px; /* Passe Bildgröße an */
+    }
+
+    .hero .content-container > div {
+        align-items: center; /* Zentriere Textinhalte vertikal */
+    }
+
+     .hero .content-container h1 {
+        font-size: 2rem; /* Reduziere Überschriftgröße */
+     }
+
+     .hero .content-container div:last-child {
+        justify-content: center; /* Zentriere Buttons */
+     }
+
+    /* Ablauf / Timeline */
+    .ablauf-timeline {
+        flex-direction: column; /* Staple Schritte vertikal */
+        height: auto; /* Höhe anpassen */
+        align-items: center;
+        margin-top: 2rem;
+        width: 90%;
+    }
+
+    .ablauf-timeline-line {
+       left: 50%;
+       width: 3px;
+       height: 100%;
+       top: 0;
+       transform: translateX(-50%);
+    }
+
+    .ablauf-step-group {
+        flex-direction: row; /* Icon und Punkt nebeneinander */
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 2rem;
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .ablauf-step-group img {
+        height: 60px; /* Passe Icongröße an */
+        margin-bottom: 0;
+    }
+
+    .ablauf-dot {
+        margin-top: 0;
+    }
+
+    .ablauf-grid {
+        flex-direction: column; /* Staple Textblöcke */
+        gap: 1.5rem; /* Passe Abstand an */
+        width: 90%;
+    }
+
+    .ablauf-grid > div {
+        text-align: left; /* Richte Text links aus */
+    }
+
+    /* Mission */
+    .mission .content-container > div {
+        grid-template-columns: 1fr; /* Auf kleineren Bildschirmen eine Spalte */
+        gap: 1.5rem;
+        justify-items: center;
+        align-items: start;
+    }
+
+    .mission .content-container img {
+        width: 80%;
+        margin-bottom: 1.5rem;
+        max-height: 50vh;
+        height: auto;
+    }
+
+     .mission .content-container > div > div {
+        width: 90%;
+        font-size: 0.9rem; /* Schriftgröße auch hier anpassen */
+        height: auto;
+     }
+     
+      .mission > h2 {
+          margin-bottom: 1.5rem;
+      }
+
+    /* Globale Wirkung */
+    .global {
+        flex-direction: column; /* Staple Text und Bild - bereits vorhanden, aber überprüfe */
+        padding: 2rem 1rem; /* Passe Padding an */
+    }
+
+    .global-text {
+         margin-left: 0; /* Entferne Ränder */
+         margin-right: 0;
+         max-width: 100%;
+         align-items: center;
+         text-align: center;
+    }
+
+    .global-img {
+        margin-right: 0; /* Entferne Rand */
+        max-width: 90%;
+        justify-content: center;
+        margin-top: 2rem;
+    }
+
+     .global-text h2 {
+         font-size: 2.5rem;
+     }
+
+      .global-text p {
+         font-size: 1.1rem;
+      }
+
+    /* Versorgung */
+    .versorgung img {
+        max-width: 100%; /* Erlaube Karte, volle Breite zu nutzen */
+        margin: 1rem auto;
+    }
+
+    /* Vorteile */
+    .vorteile .content-container .vorteile-grid {
+        flex-direction: column; /* Staple Vorteile */
+        gap: 2rem; /* Passe Abstand an */
+    }
+
+    .vorteile .content-container .vorteile-grid > div {
+        width: 90%; /* Passe Breite an */
+        margin: 0 auto; /* Zentriere */
+    }
+
+    /* Über uns */
+    .ueber-uns .content-container > div {
+        flex-direction: column; /* Staple Personen */
+        align-items: center;
+    }
+
+     .ueber-uns .content-container > div > div {
+        width: 90%; /* Passe Breite an */
+        margin-bottom: 2rem; /* Füge Abstand zwischen Personen hinzu */
+     }
+
+     .ueber-uns .content-container > div > div ul {
+         text-align: center; /* Zentriere Text */
+     }
+
+    /* Partner */
+    .partner-header {
+        flex-direction: column; /* Staple Überschrift und Logo */
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .partner-header h2 {
+        text-align: center; /* Zentriere Überschrift */
+    }
+
+    .partner-header img {
+        height: 50px; /* Passe Logogröße an */
+    }
+
+    .partner-logos {
+        gap: 1rem; /* Reduziere Abstand */
+        width: 95%;
+    }
+
+     .partner-logos img {
+         height: 50px; /* Passe Logogröße an */
+         padding: 0.3rem 0.8rem;
+     }
+
+    /* Kontakt */
+    .kontakt-inner {
+        flex-direction: column; /* Staple Bild und Inhalt - bereits vorhanden, aber überprüfe */
+        padding: 2rem 1rem; /* Passe Padding an */
+    }
+
+    .kontakt-img {
+        max-width: 90%; /* Passe Bildbreite an */
+        margin-bottom: 2rem;
+    }
+
+    .kontakt-content {
+        max-width: 90%; /* Passe Inhaltsbreite an */
+        align-items: center; /* Zentriere Inhalt */
+        padding: 0;
+    }
+
+    .kontakt-logo {
+        align-self: center; /* Zentriere Logo */
+    }
+
+    .kontakt-textblock {
+        align-items: center; /* Zentriere Textblock */
+    }
+
+    .kontakt-textblock h2 {
+        text-align: center; /* Zentriere Überschrift */
+        font-size: 2rem;
+    }
+
+    .kontakt-textblock .btn-primary {
+        align-self: center; /* Zentriere Button */
+    }
+
+    .kontakt-social {
+        justify-content: center; /* Zentriere Social Icons */
+    }
+
+    .partner-section-styled .partner-header h2 {
+        font-size: 2rem;
+    }
+    
+    .partner-section-styled .partner-header img {
+        height: 50px;
+    }
+    
+    .partner-section-styled .partner-logos {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 1.5rem;
+    }
+    
+    .partner-section-styled .partner-logos img {
+        max-height: 50px;
+        padding: 0.6rem 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Feinere Anpassungen für sehr kleine Bildschirme */
+    nav ul {
+        gap: 0.2rem; /* Weiteren Abstand reduzieren */
+    }
+
+     nav ul li a {
+         padding: 0.1rem 0.3rem; /* Weiteren Padding reduzieren */
+         font-size: 0.75rem;
+     }
+
+     .hero .content-container h1 {
+         font-size: 1.8rem;
+     }
+
+     .global-text h2 {
+         font-size: 2rem;
+     }
+
+     .kontakt-textblock h2 {
+         font-size: 1.8rem;
+     }
+
+     .partner-header h2 {
+        font-size: 2rem;
+     }
+
+    .partner-section-styled .partner-header h2 {
+        font-size: 1.8rem;
+    }
+    
+    .partner-section-styled .partner-logos {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 1rem;
+        padding: 0 0.5rem;
+    }
+    
+    .partner-section-styled .partner-logos img {
+        max-height: 40px;
+        padding: 0.5rem 0.8rem;
+    }
+} 
