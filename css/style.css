@@ -1048,3 +1048,8 @@ section > h2, section > h1 {
   transform: scale(1.05);
   box-shadow: 0 4px 16px rgba(0,0,0,0.10);
 } 
+
+.scroll-zoom-dynamic {
+  transition: transform 0.3s cubic-bezier(.22,1,.36,1);
+  will-change: transform;
+} 
