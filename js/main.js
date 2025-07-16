@@ -17,6 +17,24 @@ function handleScrollZoom() {
   });
 }
 
+function handleDynamicZoom() {
+  document.querySelectorAll('.scroll-zoom-dynamic').forEach(el => {
+    const rect = el.getBoundingClientRect();
+    const elCenter = rect.top + rect.height / 2;
+    const viewportCenter = window.innerHeight / 2;
+    const distance = Math.abs(elCenter - viewportCenter);
+    const maxScale = 1.12;
+    const minScale = 1;
+    const maxDistance = window.innerHeight / 2;
+    let scale = maxScale - (distance / maxDistance) * (maxScale - minScale);
+    scale = Math.max(minScale, Math.min(maxScale, scale));
+    el.style.transform = `scale(${scale})`;
+  });
+}
+
 window.addEventListener('scroll', handleScrollZoom);
 window.addEventListener('resize', handleScrollZoom);
-document.addEventListener('DOMContentLoaded', handleScrollZoom); 
+document.addEventListener('DOMContentLoaded', handleScrollZoom);
+window.addEventListener('scroll', handleDynamicZoom);
+window.addEventListener('resize', handleDynamicZoom);
+document.addEventListener('DOMContentLoaded', handleDynamicZoom); 
