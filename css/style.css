@@ -1262,7 +1262,8 @@ header {
   font-size: 2rem;
   color: #25777A;
   position: absolute;
-  left: 1rem;
+  right: 1rem;
+  left: auto;
   top: 1rem;
   z-index: 2001;
   cursor: pointer;
