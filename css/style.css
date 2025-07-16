@@ -1564,14 +1564,5 @@ header {
     height: 60px !important;
     width: auto !important;
     display: block !important;
-  }
-} 
-
-@media (max-width: 480px) {
-  .hero .content-container img {
-    background: none !important;
-    box-shadow: none !important;
-    border-radius: 0 !important;
-    padding: 0 !important;
     }
 } 
