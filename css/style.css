@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 /* Reset und Basis-Styles */
 * {
     margin: 0;
