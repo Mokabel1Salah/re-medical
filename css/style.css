@@ -1302,7 +1302,8 @@ header {
     display: none;
     position: fixed;
     top: 0;
-    left: auto !important;
+    bottom: 0;
+    left: unset !important;
     right: 0 !important;
     background: #F8E6D7;
     height: 100vh;
@@ -1325,6 +1326,7 @@ header {
     font-size: 1.1rem;
     height: auto;
     background: none;
+    display: flex;
   }
   .main-nav ul li {
     width: 100%;
@@ -1344,5 +1346,9 @@ header {
   }
   .hamburger {
     display: block;
-    }
+  }
+  /* Desktop-Navigation auf Mobil ausblenden */
+  header nav:not(.main-nav) {
+    display: none !important;
+  }
 } 
