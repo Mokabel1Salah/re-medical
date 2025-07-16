@@ -1495,31 +1495,42 @@ header {
     height: 100dvh !important;
     width: 100vw !important;
     display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    justify-content: center !important;
-    gap: 1.2rem !important;
-    padding: 0 1rem !important;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100vw;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2vw;
     box-sizing: border-box;
-    background: none !important;
   }
-  .hero .content-container > div {
-    width: 100%;
+  .hero .hero-left {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
-    gap: 1.2rem;
+    flex: 1 1 0;
+    min-width: 0;
+  }
+  .hero .hero-left h1 {
+    text-align: left;
+    margin-bottom: 2rem;
+  }
+  .hero .hero-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    margin-top: 0;
   }
   .hero .content-container img {
-    display: block;
-    margin: 0 auto 1.5rem auto !important;
-    height: 80px !important;
-    width: auto !important;
-    border-radius: 16px;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.07);
-    background: #fff;
-    padding: 0.5rem;
+    height: 120px;
+    width: auto;
+    margin-left: 2vw;
+    flex-shrink: 0;
+  }
+  .hero .content-container > div {
+    align-items: center;
+    width: 100%;
   }
   .hero .btn {
     width: 90vw;
