@@ -1556,10 +1556,12 @@ header {
     box-shadow: none;
   }
   .hero .content-container img {
-    background: none !important;
+    background: transparent !important;
     box-shadow: none !important;
     border-radius: 0 !important;
     padding: 0 !important;
+    border: none !important;
+    outline: none !important;
     margin: 0 auto 1.2rem auto !important;
     height: 60px !important;
     width: auto !important;
@@ -1569,9 +1571,11 @@ header {
 
 @media (max-width: 480px) {
   .hero .content-container img {
-    background: none !important;
+    background: transparent !important;
     box-shadow: none !important;
     border-radius: 0 !important;
     padding: 0 !important;
+    border: none !important;
+    outline: none !important;
   }
 } 
