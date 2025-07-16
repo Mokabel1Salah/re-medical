@@ -976,24 +976,61 @@ section > h2, section > h1 {
 
 @media (max-width: 480px) {
   /* Hero-Bereich */
+  .hero {
+    min-height: 100vh !important;
+    width: 100vw !important;
+    background: #F8E6D7 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 !important;
+    box-sizing: border-box;
+  }
   .hero .content-container {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 1rem 0;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100vw !important;
+    min-height: 100vh !important;
+    padding: 0 1rem !important;
+    box-sizing: border-box;
+    background: none !important;
   }
   .hero .content-container img {
-    height: 60px !important;
-    margin-top: 1rem;
+    display: block;
+    margin: 0 auto 1.5rem auto !important;
+    height: 80px !important;
+    width: auto !important;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+    background: #fff;
+    padding: 0.5rem;
   }
   .hero .content-container h1 {
-    font-size: 1.2rem !important;
+    font-size: 1.5rem !important;
     line-height: 1.2;
+    text-align: center;
+    color: #25777A;
+    margin-bottom: 1.2rem;
+    margin-top: 0;
+  }
+  .hero .content-container > div {
+    align-items: center !important;
+    width: 100%;
   }
   .hero .btn {
-    font-size: 1rem;
-    padding: 0.6rem 1.2rem;
-    margin: 0.2rem 0.2rem;
+    width: 90vw;
+    max-width: 320px;
+    font-size: 1.1rem;
+    padding: 0.9rem 0;
+    margin: 0.5rem auto;
+    display: block;
+    border-radius: 30px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+  .hero .content-container div:last-child {
+    justify-content: center;
   }
 
   /* Timeline / Ablauf */
