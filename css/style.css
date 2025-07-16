@@ -671,3 +671,51 @@ header {
   letter-spacing: 0.01em;
   background: transparent;
 } 
+
+.button-row {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2.5rem;
+  justify-content: flex-start;
+} 
+
+.hero-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2vw;
+  box-sizing: border-box;
+}
+.hero-text {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  min-width: 0;
+  max-width: 50%;
+}
+.hero-logo {
+  flex: 1 1 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 0;
+  max-width: 50%;
+}
+.hero-logo img {
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+.hero-text h1 {
+  font-size: 3rem;
+  color: #25777A;
+  font-family: Georgia,serif;
+  margin-bottom: 2.5rem;
+} 
