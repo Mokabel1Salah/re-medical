@@ -1299,12 +1299,19 @@ header {
 }
 
 @media (max-width: 900px) {
+  header {
+    display: block !important;
+    justify-content: unset !important;
+    align-items: unset !important;
+    width: 100vw;
+    position: relative;
+  }
   .main-nav {
     display: none;
     position: fixed;
     top: 0;
     bottom: 0;
-    left: unset !important;
+    left: auto !important;
     right: 0 !important;
     background: #F8E6D7;
     height: 100vh;
@@ -1347,6 +1354,11 @@ header {
   }
   .hamburger {
     display: block;
+    right: 1rem;
+    left: auto;
+    position: absolute;
+    top: 1rem;
+    z-index: 2001;
   }
   /* Desktop-Navigation auf Mobil ausblenden */
   header nav:not(.main-nav) {
