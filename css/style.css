@@ -1251,10 +1251,56 @@ section > h2, section > h1 {
   will-change: transform;
 } 
 
+/* Standard-Styles für Navigation und Hamburger-Button */
+header {
+  position: relative;
+}
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #25777A;
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  z-index: 2001;
+  cursor: pointer;
+}
+.main-nav {
+  display: block;
+}
+.main-nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  list-style: none;
+  font-size: 1.1rem;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0.4rem 0;
+  height: 40px;
+  align-items: center;
+  background: transparent;
+  width: 100%;
+}
+.main-nav ul li a {
+  color: #25777A;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+  transition: background 0.2s, color 0.2s;
+  display: inline-block;
+  font-size: 0.9rem;
+  letter-spacing: 0.01em;
+  background: transparent;
+}
+
 @media (max-width: 900px) {
   .main-nav {
     position: fixed;
-    top: 0; left: 0; right: 0;
+    top: 0; left: 0; right: auto;
     background: #F8E6D7;
     height: 100vh;
     width: 80vw;
@@ -1263,19 +1309,19 @@ section > h2, section > h1 {
     transform: translateX(-100%);
     transition: transform 0.3s cubic-bezier(.22,1,.36,1);
     box-shadow: 2px 0 16px rgba(0,0,0,0.08);
-    display: block !important;
+    display: block;
   }
   .main-nav.open {
     transform: translateX(0);
   }
   .main-nav ul {
-    flex-direction: column !important;
-    gap: 1.5rem !important;
-    align-items: flex-start !important;
-    padding: 4rem 2rem 2rem 2rem !important;
-    font-size: 1.1rem !important;
-    height: auto !important;
-    background: none !important;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: flex-start;
+    padding: 4rem 2rem 2rem 2rem;
+    font-size: 1.1rem;
+    height: auto;
+    background: none;
   }
   .main-nav ul li {
     width: 100%;
@@ -1285,33 +1331,18 @@ section > h2, section > h1 {
     display: block;
     padding: 0.8rem 0;
     font-size: 1.1rem;
-    color: #25777A !important;
+    color: #25777A;
     border-radius: 0;
     text-align: left;
   }
   .main-nav ul li a:hover {
     background: #F68B4B;
-    color: #fff !important;
+    color: #fff;
   }
   .hamburger {
-    display: block !important;
+    display: block;
   }
-  header nav {
-    display: none !important;
-  }
-  body.menu-open {
-    overflow: hidden;
-  }
-  .main-nav::after {
-    content: "";
-    position: fixed;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(0,0,0,0.2);
-    z-index: 1999;
-    pointer-events: none;
-    display: none;
-  }
-  .main-nav.open::after {
+  .main-nav {
     display: block;
   }
 } 
