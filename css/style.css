@@ -1543,3 +1543,25 @@ header {
     box-shadow: 0 2px 8px rgba(0,0,0,0.04);
   }
 } 
+
+@media (max-width: 900px) {
+  .hero .btn {
+    width: 80vw;
+    max-width: 220px;
+    font-size: 1rem;
+    padding: 0.7rem 0;
+    margin: 0.4rem auto;
+    display: block;
+    border-radius: 30px;
+    box-shadow: none;
+  }
+  .hero .content-container img {
+    margin: 0 auto 1.2rem auto !important;
+    height: 60px !important;
+    width: auto !important;
+    border-radius: 0;
+    box-shadow: none;
+    background: none;
+    padding: 0;
+  }
+} 
