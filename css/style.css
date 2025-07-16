@@ -1556,12 +1556,13 @@ header {
     box-shadow: none;
   }
   .hero .content-container img {
+    background: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
     margin: 0 auto 1.2rem auto !important;
     height: 60px !important;
     width: auto !important;
-    border-radius: 0;
-    box-shadow: none;
-    background: none;
-    padding: 0;
+    display: block !important;
   }
 } 
