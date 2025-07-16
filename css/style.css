@@ -1016,3 +1016,35 @@ section > h2, section > h1 {
         padding: 0.5rem 0.8rem;
     }
 } 
+
+.scroll-zoom {
+  transition: transform 0.6s cubic-bezier(.22,1,.36,1);
+  will-change: transform;
+  transform: scale(1);
+}
+.scroll-zoom.in-view {
+  transform: scale(1.06);
+} 
+
+.scroll-fade {
+  opacity: 0;
+  transition: opacity 0.8s cubic-bezier(.22,1,.36,1);
+}
+.scroll-fade.in-view {
+  opacity: 1;
+}
+
+.scroll-slide {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s, transform 0.8s cubic-bezier(.22,1,.36,1);
+}
+.scroll-slide.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+} 
