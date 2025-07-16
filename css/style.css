@@ -977,7 +977,8 @@ section > h2, section > h1 {
 @media (max-width: 480px) {
   /* Hero-Bereich */
   .hero {
-    min-height: 100vh !important;
+    min-height: 100dvh !important;
+    height: 100dvh !important;
     width: 100vw !important;
     background: #F8E6D7 !important;
     display: flex !important;
@@ -985,14 +986,16 @@ section > h2, section > h1 {
     justify-content: center !important;
     padding: 0 !important;
     box-sizing: border-box;
+    overflow: hidden !important;
   }
   .hero .content-container {
+    min-height: 100dvh !important;
+    height: 100dvh !important;
+    width: 100vw !important;
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
     justify-content: center !important;
-    width: 100vw !important;
-    min-height: 100vh !important;
     padding: 0 1rem !important;
     box-sizing: border-box;
     background: none !important;
