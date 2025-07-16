@@ -1475,3 +1475,11 @@ header {
     word-break: break-word;
   }
 } 
+
+@media (max-width: 900px) {
+  .hero .content-container img {
+    background: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+  }
+} 
