@@ -1070,7 +1070,7 @@ section > h2, section > h1 {
     align-items: center;
     text-align: center;
   }
-  .global-text h2 {
+     .global-text h2 {
     font-size: 1.2rem !important;
     margin-bottom: 1rem;
   }
@@ -1118,7 +1118,7 @@ section > h2, section > h1 {
   .ueber-uns .content-container > div {
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
+        gap: 1rem;
   }
   .ueber-uns .content-container > div > div {
     width: 98vw;
@@ -1146,7 +1146,7 @@ section > h2, section > h1 {
     gap: 0.5rem !important;
     max-width: 95vw !important;
   }
-  .partner-section-styled .partner-logos img {
+    .partner-section-styled .partner-logos img {
     max-height: 30px !important;
     padding: 0.2rem 0.5rem !important;
   }
@@ -1301,15 +1301,15 @@ header {
   .main-nav {
     display: none;
     position: fixed;
-    top: 0; left: 0; right: auto;
+    top: 0; left: auto; right: 0;
     background: #F8E6D7;
     height: 100vh;
     width: 80vw;
     max-width: 320px;
     z-index: 2000;
-    transform: translateX(-100%);
+    transform: translateX(100%);
     transition: transform 0.3s cubic-bezier(.22,1,.36,1);
-    box-shadow: 2px 0 16px rgba(0,0,0,0.08);
+    box-shadow: -2px 0 16px rgba(0,0,0,0.08);
   }
   .main-nav.open {
     display: block;
@@ -1342,5 +1342,5 @@ header {
   }
   .hamburger {
     display: block;
-  }
+    }
 } 
