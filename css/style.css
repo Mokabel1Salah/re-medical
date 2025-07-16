@@ -688,6 +688,7 @@ header {
   margin: 0 auto;
   padding: 0 2vw;
   box-sizing: border-box;
+  gap: 2rem;
 }
 .hero-text {
   flex: 1 1 0;
@@ -697,6 +698,7 @@ header {
   align-items: flex-start;
   min-width: 0;
   max-width: 50%;
+  box-sizing: border-box;
 }
 .hero-logo {
   flex: 1 1 0;
@@ -705,17 +707,32 @@ header {
   align-items: center;
   min-width: 0;
   max-width: 50%;
+  box-sizing: border-box;
 }
 .hero-logo img {
-  width: 100%;
+  width: 90%;
   max-width: 320px;
   height: auto;
   object-fit: contain;
   display: block;
+}
+.button-row {
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 2rem;
+  margin-top: 2.5rem;
+  justify-content: flex-start;
+  width: 100%;
+}
+.button-row .btn {
+  display: inline-block !important;
+  width: auto !important;
+  min-width: 0;
 }
 .hero-text h1 {
   font-size: 3rem;
   color: #25777A;
   font-family: Georgia,serif;
   margin-bottom: 2.5rem;
+  line-height: 1.1;
 } 
