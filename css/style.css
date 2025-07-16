@@ -710,8 +710,8 @@ header {
   box-sizing: border-box;
 }
 .hero-logo img {
-  width: 90%;
-  max-width: 320px;
+  width: 98%;
+  max-width: 400px;
   height: auto;
   object-fit: contain;
   display: block;
