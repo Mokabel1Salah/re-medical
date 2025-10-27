@@ -40,39 +40,37 @@ body {
 }
 
 .mobile-logo {
-    height: 25px;
+    height: 20px;
     width: auto;
-    max-width: 100px;
+    max-width: 80px;
 }
 
 .hamburger {
-    display: flex;
+    display: flex !important;
     flex-direction: column;
     justify-content: space-around;
-    width: 40px;
-    height: 40px;
-    background: rgba(37, 119, 122, 0.1);
-    border: 2px solid #25777A;
-    border-radius: 8px;
+    width: 35px;
+    height: 35px;
+    background: #25777A;
+    border: none;
+    border-radius: 6px;
     cursor: pointer;
-    padding: 8px;
+    padding: 6px;
     z-index: 1001;
     transition: all 0.3s ease;
+    position: relative;
 }
 
 .hamburger:hover {
-    background: #25777A;
-}
-
-.hamburger:hover span {
-    background: #fff;
+    background: #195356;
+    transform: scale(1.05);
 }
 
 .hamburger span {
     display: block;
-    height: 3px;
+    height: 2px;
     width: 100%;
-    background: #25777A;
+    background: #fff;
     border-radius: 2px;
     transition: all 0.3s ease;
 }
