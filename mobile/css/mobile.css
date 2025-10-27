@@ -188,6 +188,8 @@ body.menu-open::before {
     margin-bottom: 2rem;
     width: 100%;
     max-width: 300px;
+    align-items: center;
+    justify-content: center;
 }
 
 .hero-logo img {
@@ -536,9 +538,11 @@ body.menu-open::before {
 }
 
 .kontakt-logo-mobile {
-    width: 80px;
-    height: 80px;
+    width: 120px;
+    height: 120px;
     margin-bottom: 1.5rem;
+    object-fit: contain;
+    max-width: 100%;
 }
 
 .kontakt-content-mobile h2 {
