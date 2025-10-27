@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Test</title>
+    <style>
+        body { margin: 0; padding: 20px; font-family: Arial, sans-serif; }
+        .test-section { margin: 20px 0; padding: 20px; background: #f0f0f0; }
+        .test-section img { max-width: 100%; height: auto; }
+        .hamburger { 
+            background: #333; 
+            color: white; 
+            border: none; 
+            padding: 10px 20px; 
+            cursor: pointer;
+            margin: 10px 0;
+        }
+        .nav { 
+            display: none; 
+            background: #333; 
+            color: white; 
+            padding: 20px;
+            margin: 10px 0;
+        }
+        .nav.active { display: block; }
+    </style>
+</head>
+<body>
+    <h1>Mobile Test</h1>
+    
+    <button class="hamburger" onclick="toggleNav()">☰ Menü</button>
+    
+    <nav class="nav" id="nav">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    
+    <div class="test-section">
+        <h2>Bild Test</h2>
+        <img src="../img/logo.png" alt="Logo Test">
+        <p>Dieses Bild sollte immer sichtbar bleiben!</p>
+    </div>
+    
+    <div class="test-section">
+        <h2>Scroll Test</h2>
+        <p>Scroll nach unten und prüfe ob das Bild oben noch sichtbar ist.</p>
+        <div style="height: 1000px; background: linear-gradient(to bottom, #ff0000, #00ff00, #0000ff);"></div>
+    </div>
+    
+    <script>
+        function toggleNav() {
+            const nav = document.getElementById('nav');
+            nav.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

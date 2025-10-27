@@ -76,18 +76,18 @@ body {
     transform: rotate(-45deg) translate(6px, -6px);
 }
 
-/* Mobile Navigation */
+/* Mobile Navigation - Sidebar von links */
 .mobile-nav {
     position: fixed;
     top: 60px;
     left: 0;
-    right: 0;
+    width: 280px;
+    height: calc(100vh - 60px);
     background: #F8E6D7;
     transform: translateX(-100%);
     transition: transform 0.3s ease;
     z-index: 999;
-    box-shadow: 2px 0 10px rgba(0,0,0,0.1);
-    height: calc(100vh - 60px);
+    box-shadow: 2px 0 15px rgba(0,0,0,0.2);
     overflow-y: auto;
 }
 
@@ -698,26 +698,32 @@ body.menu-open::before {
     }
 }
 
-/* Smooth Scrolling und Animationen - vereinfacht */
+/* Alle Elemente sind standardmäßig sichtbar - KEINE Animationen die Probleme verursachen */
 .timeline-step,
 .vorteil-card,
-.team-member {
-    opacity: 1;
-    transform: translateY(0);
-    transition: all 0.3s ease;
+.team-member,
+.mission-content img,
+.global-img img,
+.mobile-versorgung img,
+.partner-logos-mobile img,
+.kontakt-logo-mobile,
+.timeline-step img,
+.vorteil-card img,
+.team-member img,
+.hero-logo img,
+.mobile-logo {
+    opacity: 1 !important;
+    transform: none !important;
+    visibility: visible !important;
+    display: block !important;
+    max-width: 100% !important;
+    height: auto !important;
 }
 
-/* Einfache Hover-Effekte */
+/* Einfache Hover-Effekte nur für Karten */
 .timeline-step:hover,
 .vorteil-card:hover,
 .team-member:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-}
-
-@keyframes fadeInUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
