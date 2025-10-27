@@ -52,28 +52,8 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Scroll-basierte Logo-Sichtbarkeit
-    const mobileLogo = document.getElementById('mobile-logo');
-    const heroSection = document.querySelector('.mobile-hero');
-    const secondSection = document.querySelector('.mobile-ablauf');
-    
-    function handleLogoVisibility() {
-        if (!mobileLogo || !heroSection || !secondSection) return;
-        
-        const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
-        const secondSectionTop = secondSection.offsetTop;
-        const scrollY = window.pageYOffset;
-        
-        // Logo wird sichtbar wenn man zur 2. Sektion scrollt
-        if (scrollY >= secondSectionTop - 100) {
-            mobileLogo.classList.add('visible');
-        } else {
-            mobileLogo.classList.remove('visible');
-        }
-    }
-    
-    window.addEventListener('scroll', handleLogoVisibility);
-    document.addEventListener('DOMContentLoaded', handleLogoVisibility);
+    // Vereinfachte Animationen - keine komplexen Observer
+    // Elemente sind standardmäßig sichtbar
     
     // Touch-Gesten für bessere mobile Erfahrung
     let touchStartY = 0;
