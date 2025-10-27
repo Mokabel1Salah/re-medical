@@ -52,8 +52,29 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Vereinfachte Animationen - keine komplexen Observer
-    // Elemente sind standardmäßig sichtbar
+    // Logo Sichtbarkeit basierend auf Scroll-Position
+    const mobileLogo = document.getElementById('mobile-logo');
+    const heroSection = document.querySelector('.mobile-hero');
+    const secondSection = document.querySelector('.mobile-ablauf');
+    
+    function handleLogoVisibility() {
+        if (!mobileLogo || !heroSection || !secondSection) return;
+        
+        const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
+        const secondSectionTop = secondSection.offsetTop;
+        const scrollY = window.pageYOffset;
+        
+        // Logo wird sichtbar wenn man die erste Sektion verlässt
+        if (scrollY > heroBottom - 100) {
+            mobileLogo.classList.add('visible');
+        } else {
+            mobileLogo.classList.remove('visible');
+        }
+    }
+    
+    // Scroll Event für Logo Sichtbarkeit
+    window.addEventListener('scroll', handleLogoVisibility);
+    document.addEventListener('DOMContentLoaded', handleLogoVisibility);
     
     // Touch-Gesten für bessere mobile Erfahrung
     let touchStartY = 0;
