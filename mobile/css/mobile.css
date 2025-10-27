@@ -180,9 +180,9 @@ body.menu-open::before {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    gap: 2rem;
+    padding-top: 4rem;
 }
 
 .hero-content h1 {
@@ -207,6 +207,7 @@ body.menu-open::before {
 
 .hero-logo {
     order: 1;
+    margin-bottom: 3rem;
 }
 
 .hero-logo img {
