@@ -64,8 +64,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const secondSectionTop = secondSection.offsetTop;
         const scrollY = window.pageYOffset;
         
-        // Logo wird sichtbar wenn man die erste Sektion verlässt
-        if (scrollY > heroBottom - 100) {
+        // Logo wird sichtbar erst wenn man zur zweiten Sektion scrollt
+        if (scrollY >= secondSectionTop - 50) {
             mobileLogo.classList.add('visible');
         } else {
             mobileLogo.classList.remove('visible');

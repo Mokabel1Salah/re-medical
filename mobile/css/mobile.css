@@ -40,9 +40,9 @@ body {
 }
 
 .mobile-logo {
-    height: 20px;
+    height: 15px;
     width: auto;
-    max-width: 80px;
+    max-width: 60px;
     opacity: 0;
     transition: opacity 0.3s ease;
 }
