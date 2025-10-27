@@ -34,25 +34,27 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem;
-    height: 60px;
+    padding: 0.5rem 1rem;
+    height: 50px;
 }
 
 .mobile-logo {
-    height: 40px;
+    height: 30px;
     width: auto;
+    max-width: 120px;
 }
 
 .hamburger {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    width: 30px;
-    height: 30px;
+    width: 35px;
+    height: 35px;
     background: none;
     border: none;
     cursor: pointer;
-    padding: 0;
+    padding: 5px;
+    z-index: 1001;
 }
 
 .hamburger span {
@@ -79,10 +81,10 @@ body {
 /* Mobile Navigation - Sidebar von links */
 .mobile-nav {
     position: fixed;
-    top: 60px;
+    top: 50px;
     left: 0;
     width: 280px;
-    height: calc(100vh - 60px);
+    height: calc(100vh - 50px);
     background: #F8E6D7;
     transform: translateX(-100%);
     transition: transform 0.3s ease;
@@ -142,7 +144,7 @@ body {
 
 /* Main Content */
 main {
-    margin-top: 60px;
+    margin-top: 50px;
 }
 
 /* Overlay für Navigation */
@@ -179,13 +181,14 @@ body.menu-open::before {
     font-family: Georgia, serif;
     margin-bottom: 2rem;
     line-height: 1.2;
+    text-align: center;
 }
 
 .hero-buttons {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    margin-bottom: 2rem;
+    margin: 0 auto 2rem auto;
     width: 100%;
     max-width: 300px;
     align-items: center;
