@@ -52,29 +52,8 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Intersection Observer für Animationen
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-    
-    const observer = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-            }
-        });
-    }, observerOptions);
-    
-    // Elemente für Animationen beobachten
-    const animatedElements = document.querySelectorAll('.timeline-step, .vorteil-card, .team-member');
-    animatedElements.forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(20px)';
-        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        observer.observe(el);
-    });
+    // Vereinfachte Animationen - keine komplexen Observer
+    // Elemente sind standardmäßig sichtbar
     
     // Touch-Gesten für bessere mobile Erfahrung
     let touchStartY = 0;
@@ -101,27 +80,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-    // Lazy Loading für Bilder
-    const images = document.querySelectorAll('img[src]');
-    const imageObserver = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const img = entry.target;
-                img.style.opacity = '0';
-                img.style.transition = 'opacity 0.3s ease';
-                
-                img.onload = function() {
-                    img.style.opacity = '1';
-                };
-                
-                imageObserver.unobserve(img);
-            }
-        });
-    });
-    
-    images.forEach(img => {
-        imageObserver.observe(img);
-    });
+    // Lazy Loading für Bilder - deaktiviert um das Verschwinden zu verhindern
+    // Bilder werden normal geladen und angezeigt
     
     // Scroll-to-Top Button
     const scrollToTopBtn = document.createElement('button');
