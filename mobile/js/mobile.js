@@ -52,18 +52,20 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Logo Scroll-Animation
-    const mobileLogo = document.querySelector('.mobile-logo');
+    // Scroll-basierte Logo-Sichtbarkeit
+    const mobileLogo = document.getElementById('mobile-logo');
     const heroSection = document.querySelector('.mobile-hero');
+    const secondSection = document.querySelector('.mobile-ablauf');
     
     function handleLogoVisibility() {
-        if (!mobileLogo || !heroSection) return;
+        if (!mobileLogo || !heroSection || !secondSection) return;
         
         const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
-        const scrollPosition = window.pageYOffset;
+        const secondSectionTop = secondSection.offsetTop;
+        const scrollY = window.pageYOffset;
         
-        // Logo wird sichtbar wenn man aus der Hero-Section scrollt
-        if (scrollPosition > heroBottom * 0.3) {
+        // Logo wird sichtbar wenn man zur 2. Sektion scrollt
+        if (scrollY >= secondSectionTop - 100) {
             mobileLogo.classList.add('visible');
         } else {
             mobileLogo.classList.remove('visible');

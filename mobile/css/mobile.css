@@ -186,8 +186,9 @@ body.menu-open::before {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+    padding-top: 4rem;
 }
 
 .hero-content h1 {
@@ -210,11 +211,19 @@ body.menu-open::before {
     justify-content: center;
 }
 
+.hero-logo {
+    order: 1;
+    margin-bottom: 3rem;
+}
+
+.hero-logo img {
+    width: 200px;
+    height: auto;
+    max-width: 100%;
+}
+
 .hero-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    order: 2;
 }
 
 /* Buttons */
