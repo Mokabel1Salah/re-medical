@@ -306,7 +306,8 @@ body.menu-open::before {
 .timeline-step img {
     width: 80px;
     height: 80px;
-    margin-bottom: 1rem;
+    margin: 0 auto 1rem auto;
+    display: block;
     object-fit: contain;
 }
 
