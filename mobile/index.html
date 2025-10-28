@@ -227,6 +227,68 @@
         <p>&copy; 2025 ReMed. Alle Rechte vorbehalten.</p>
     </footer>
 
+    <!-- Cookie Consent Banner -->
+    <div id="cookie-banner" style="position: fixed; bottom: 0; left: 0; right: 0; background: #f3f3f3; padding: 15px; box-shadow: 0 -2px 5px rgba(0,0,0,0.2); font-size: 14px; display: none; z-index: 9999;">
+      <p style="margin: 0 0 10px 0;">
+        Wir verwenden Cookies, um die Nutzung unserer Website zu analysieren. Sie können entscheiden, welche Cookies Sie akzeptieren.
+        <a href="../datenschutz.html" target="_blank">Mehr erfahren</a>.
+      </p>
+      <button id="accept-cookies" style="background: #0066cc; color: white; border: none; padding: 8px 15px; border-radius: 4px; cursor: pointer;">Akzeptieren</button>
+      <button id="decline-cookies" style="margin-left: 10px; background: #ccc; border: none; padding: 8px 15px; border-radius: 4px; cursor: pointer;">Ablehnen</button>
+    </div>
+
+    <!-- Link zum späteren Ändern -->
+    <div style="position: fixed; bottom: 10px; right: 10px; font-size: 12px;">
+      <a href="#" id="cookie-settings-link" style="color: #666;">Cookie-Einstellungen ändern</a>
+    </div>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const banner = document.getElementById("cookie-banner");
+      const consent = localStorage.getItem("cookieConsent");
+
+      // Wenn keine Entscheidung vorliegt → Banner anzeigen
+      if (!consent) {
+        banner.style.display = "block";
+      } else if (consent === "accepted") {
+        loadAnalytics();
+      }
+
+      // Zustimmung
+      document.getElementById("accept-cookies").addEventListener("click", function() {
+        localStorage.setItem("cookieConsent", "accepted");
+        banner.style.display = "none";
+        loadAnalytics();
+      });
+
+      // Ablehnung
+      document.getElementById("decline-cookies").addEventListener("click", function() {
+        localStorage.setItem("cookieConsent", "declined");
+        banner.style.display = "none";
+      });
+
+      // Erlaubt erneutes Ändern
+      document.getElementById("cookie-settings-link").addEventListener("click", function(e) {
+        e.preventDefault();
+        localStorage.removeItem("cookieConsent");
+        banner.style.display = "block";
+      });
+
+      // Lädt Google Analytics nur nach Zustimmung
+      function loadAnalytics() {
+        const script = document.createElement("script");
+        script.src = "https://www.googletagmanager.com/gtag/js?id=G-4EMET6990B";
+        script.async = true;
+        document.head.appendChild(script);
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-4EMET6990B', { anonymize_ip: true });
+      }
+    });
+    </script>
+
     <script src="js/mobile.js"></script>
 </body>
 </html>
