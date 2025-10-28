@@ -228,19 +228,43 @@
     </footer>
 
     <!-- Cookie Consent Banner -->
-    <div id="cookie-banner" style="position: fixed; bottom: 0; left: 0; right: 0; background: #f3f3f3; padding: 15px; box-shadow: 0 -2px 5px rgba(0,0,0,0.2); font-size: 14px; display: none; z-index: 9999;">
-      <p style="margin: 0 0 10px 0;">
-        Wir verwenden Cookies, um die Nutzung unserer Website zu analysieren. Sie können entscheiden, welche Cookies Sie akzeptieren.
-        <a href="../datenschutz.html" target="_blank">Mehr erfahren</a>.
-      </p>
-      <button id="accept-cookies" style="background: #0066cc; color: white; border: none; padding: 8px 15px; border-radius: 4px; cursor: pointer;">Akzeptieren</button>
-      <button id="decline-cookies" style="margin-left: 10px; background: #ccc; border: none; padding: 8px 15px; border-radius: 4px; cursor: pointer;">Ablehnen</button>
+    <div id="cookie-banner" style="position: fixed; bottom: 0; left: 0; right: 0; background: linear-gradient(135deg, #F8E6D7 0%, #F68B4B 100%); padding: 20px 15px; box-shadow: 0 -4px 20px rgba(37, 119, 122, 0.3); font-size: 15px; display: none; z-index: 9999; border-top: 3px solid #25777A;">
+      <div style="max-width: 100%; margin: 0 auto;">
+        <div style="margin-bottom: 15px;">
+          <p style="margin: 0; color: #25777A; font-weight: 500; line-height: 1.4; text-align: center;">
+            🍪 Wir verwenden Cookies für die beste Erfahrung.
+            <a href="../datenschutz.html" target="_blank" style="color: #25777A; text-decoration: underline; font-weight: bold;">Mehr erfahren</a>
+          </p>
+        </div>
+        <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+          <button id="accept-cookies" style="background: #25777A; color: white; border: none; padding: 12px 20px; border-radius: 25px; cursor: pointer; font-size: 15px; font-weight: bold; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(37, 119, 122, 0.3); flex: 1; max-width: 140px;">✓ Akzeptieren</button>
+          <button id="decline-cookies" style="background: transparent; color: #25777A; border: 2px solid #25777A; padding: 10px 18px; border-radius: 25px; cursor: pointer; font-size: 15px; font-weight: bold; transition: all 0.3s ease; flex: 1; max-width: 140px;">✗ Ablehnen</button>
+        </div>
+      </div>
     </div>
 
     <!-- Link zum späteren Ändern -->
-    <div style="position: fixed; bottom: 10px; right: 10px; font-size: 12px;">
-      <a href="#" id="cookie-settings-link" style="color: #666;">Cookie-Einstellungen ändern</a>
+    <div style="position: fixed; bottom: 15px; right: 15px; z-index: 9998;">
+      <a href="#" id="cookie-settings-link" style="color: #25777A; background: rgba(248, 230, 215, 0.9); padding: 6px 12px; border-radius: 20px; text-decoration: none; font-size: 13px; font-weight: 500; box-shadow: 0 2px 10px rgba(0,0,0,0.1); transition: all 0.3s ease; border: 1px solid #25777A;">⚙️ Einstellungen</a>
     </div>
+
+    <style>
+    #accept-cookies:hover {
+      background: #1e5f62 !important;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(37, 119, 122, 0.4) !important;
+    }
+    #decline-cookies:hover {
+      background: #25777A !important;
+      color: white !important;
+      transform: translateY(-2px);
+    }
+    #cookie-settings-link:hover {
+      background: rgba(248, 230, 215, 1) !important;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2) !important;
+    }
+    </style>
 
     <script>
     document.addEventListener("DOMContentLoaded", function() {
