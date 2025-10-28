@@ -449,7 +449,8 @@ body.menu-open::before {
 .vorteil-card img {
     width: 80px;
     height: 80px;
-    margin-bottom: 1rem;
+    margin: 0 auto 1rem auto;
+    display: block;
     object-fit: contain;
 }
 
@@ -511,7 +512,8 @@ body.menu-open::before {
     height: 120px;
     border-radius: 50%;
     object-fit: cover;
-    margin-bottom: 1rem;
+    margin: 0 auto 1rem auto;
+    display: block;
     border: 4px solid #F68B4B;
 }
 
