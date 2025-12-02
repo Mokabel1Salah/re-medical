@@ -238,6 +238,100 @@ body.menu-open::before {
     order: 2;
 }
 
+/* Mobile Galerie */
+.mobile-gallery {
+    background: #f1f9f9;
+    padding: 3rem 1rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.mobile-gallery .gallery-intro {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    color: #25777A;
+}
+.mobile-gallery .gallery-intro h2 {
+    font-size: 2.2rem;
+    color: #F68B4B;
+    font-family: Georgia, serif;
+}
+.mobile-gallery .gallery-intro p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+.mobile-gallery .gallery-slider {
+    position: relative;
+    width: 100%;
+    border-radius: 18px;
+    background: #fff;
+    padding: 1rem 3rem;
+    box-shadow: 0 14px 36px rgba(37,119,122,0.18);
+}
+.mobile-gallery .gallery-frame {
+    position: relative;
+    width: 100%;
+    height: 320px;
+    overflow: hidden;
+    border-radius: 14px;
+}
+.mobile-gallery .gallery-slide {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background: #fff;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+.mobile-gallery .gallery-slide.active {
+    opacity: 1;
+}
+.mobile-gallery .gallery-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(37,119,122,0.9);
+    color: #fff;
+    border: none;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.mobile-gallery .gallery-arrow.prev {
+    left: 0.8rem;
+}
+.mobile-gallery .gallery-arrow.next {
+    right: 0.8rem;
+}
+.mobile-gallery .gallery-caption {
+    margin-top: 1rem;
+    color: #1e5f62;
+    font-weight: 600;
+}
+
+@media (max-width: 480px) {
+    .mobile-gallery .gallery-slider {
+        padding: 1rem 2.5rem;
+    }
+    .mobile-gallery .gallery-frame {
+        height: 240px;
+    }
+    .mobile-gallery .gallery-arrow {
+        width: 36px;
+        height: 36px;
+        font-size: 1.2rem;
+    }
+}
+
 /* Buttons */
 .btn {
     display: inline-block;

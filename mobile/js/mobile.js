@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Hamburger-Menü Funktionalität
     const hamburger = document.getElementById('hamburger');
     const mobileNav = document.getElementById('mobile-nav');
+    initGallerySliders();
     
     if (hamburger && mobileNav) {
         hamburger.addEventListener('click', function() {
@@ -185,3 +186,75 @@ const handleScroll = debounce(function() {
 }, 10);
 
 window.addEventListener('scroll', handleScroll, { passive: true });
+
+function initGallerySliders() {
+    const sliders = document.querySelectorAll('[data-gallery-slider]');
+    if (!sliders.length) return;
+
+    sliders.forEach(slider => {
+        const slides = slider.querySelectorAll('.gallery-slide');
+        if (!slides.length) return;
+
+        const captionEl = slider.querySelector('.gallery-caption');
+        const prevBtn = slider.querySelector('.gallery-arrow.prev');
+        const nextBtn = slider.querySelector('.gallery-arrow.next');
+        let current = 0;
+        let intervalId;
+
+        const updateSlides = (index) => {
+            slides.forEach((slide, idx) => {
+                slide.classList.toggle('active', idx === index);
+            });
+            if (captionEl) {
+                const caption = slides[index].dataset.caption || slides[index].alt || '';
+                captionEl.textContent = caption;
+            }
+            current = index;
+        };
+
+        const showNext = () => {
+            const nextIndex = (current + 1) % slides.length;
+            updateSlides(nextIndex);
+        };
+
+        const showPrev = () => {
+            const prevIndex = (current - 1 + slides.length) % slides.length;
+            updateSlides(prevIndex);
+        };
+
+        const restartInterval = () => {
+            clearInterval(intervalId);
+            intervalId = setInterval(showNext, 3000);
+        };
+
+        prevBtn?.addEventListener('click', () => {
+            showPrev();
+            restartInterval();
+        });
+
+        nextBtn?.addEventListener('click', () => {
+            showNext();
+            restartInterval();
+        });
+
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        slider.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+            clearInterval(intervalId);
+        }, { passive: true });
+
+        slider.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            const diff = touchEndX - touchStartX;
+            if (Math.abs(diff) > 40) {
+                diff > 0 ? showPrev() : showNext();
+            }
+            restartInterval();
+        });
+
+        updateSlides(0);
+        restartInterval();
+    });
+}
